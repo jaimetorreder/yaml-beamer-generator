@@ -8,17 +8,19 @@ This project automates the creation of educational slide presentations by separa
 
 ## Project Status
 
-🚧 **Currently in Development** - Starting with a minimal viable product (5 slides, 2 templates)
+✅ **Minimal Working Example Complete** - 5 slides, 2 template types
 
-## Features (Planned)
+## Features
 
 - ✅ Define lesson content in simple YAML format
-- ✅ Modular LaTeX templates for different slide types
-- ✅ Python generator validates and compiles presentations
-- 🚧 Multiple slide templates (text, two-column, graphs, etc.)
-- 🚧 Animation support for step-by-step reveals
+- ✅ YAML schema documentation
+- ✅ Python generator script
+- ✅ Two slide templates: `do_now` and `diagnostic_question`
+- ✅ LaTeX math notation support
+- ✅ Working example with 5 slides
 - 🚧 Schema validation for YAML structure
-- 📋 Full math lesson support with equations and graphs
+- 📋 Additional slide templates (text, two-column, graphs, etc.)
+- 📋 Animation support for step-by-step reveals
 
 ## Quick Start
 
@@ -35,98 +37,101 @@ This project automates the creation of educational slide presentations by separa
 git clone https://github.com/yourusername/yaml-beamer-generator.git
 cd yaml-beamer-generator
 
-# Install Python dependencies
-pip install -r requirements.txt
+# Install Python dependencies (only PyYAML required)
+pip install pyyaml
 
-# Verify LaTeX installation
+# (Optional) Verify LaTeX installation to compile PDFs
 pdflatex --version
 ```
 
 ### Basic Usage
 
 ```bash
-# Generate presentation from YAML
-python generate_presentation.py lesson.yaml
+# Generate LaTeX from YAML
+python generate_beamer.py example_lesson.yaml output.tex
 
-# Output will be: lesson.tex and lesson.pdf
+# Or output to stdout
+python generate_beamer.py example_lesson.yaml
+
+# Compile to PDF (if you have pdflatex)
+pdflatex output.tex
 ```
 
 ## Project Structure
 
 ```
 yaml-beamer-generator/
-├── README.md
-├── LICENSE
-├── requirements.txt
-├── .gitignore
-├── schema.yaml              # YAML structure definition
-├── generate_presentation.py # Main generator script
-├── templates/               # LaTeX slide templates
-│   ├── text_slide.tex
-│   ├── two_column_slide.tex
-│   └── ...
-├── examples/                # Example lesson plans
-│   ├── simple_lesson.yaml
-│   └── math_lesson.yaml
-├── tests/                   # Unit tests
-│   └── test_generator.py
-└── docs/                    # Documentation
-    ├── yaml_guide.md
-    └── template_guide.md
+├── README.md                 # This file
+├── schema.md                 # YAML structure documentation
+├── generate_beamer.py        # Main generator script
+├── example_lesson.yaml       # Example lesson with 5 slides
+└── example_output.tex        # Generated LaTeX output
 ```
 
 ## YAML Lesson Format
 
+See [schema.md](schema.md) for complete documentation.
+
 Example lesson structure:
 
 ```yaml
-presentation:
-  title: "Introduction to Linear Equations"
-  author: "Your Name"
-  date: "2025"
+title: "Linear Functions Review"
+author: "Math Teacher"
+date: "2025-10-22"
 
 slides:
-  - type: text_slide
-    title: "Learning Objectives"
-    content: |
-      By the end of this lesson, students will:
-      - Understand slope-intercept form
-      - Graph linear equations
-      - Solve real-world problems
+  # Do Now - generates 2 slides (questions + answers)
+  - type: do_now
+    title: "Do Now"
+    questions:
+      - question: "Solve: $2x + 5 = 13$"
+        answer: "$x = 4$"
+      - question: "What is the slope of $y = 3x - 2$?"
+        answer: "$m = 3$"
 
-  - type: two_column_slide
-    title: "Example Problem"
-    left_content: "Graph: y = 2x + 3"
-    right_content: |
-      Steps:
-      1. Identify slope: m = 2
-      2. Identify y-intercept: b = 3
-      3. Plot points and draw line
+  # Diagnostic Question - multiple choice
+  - type: diagnostic_question
+    title: "Diagnostic: Slope"
+    question: "What is the slope of a horizontal line?"
+    options:
+      - "0"
+      - "1"
+      - "Undefined"
+      - "Negative"
+    correct: 0  # Index of correct answer (0-based)
 ```
 
 ## Available Slide Templates
 
 ### Current (v0.1)
-- `text_slide` - Simple title and content
-- `two_column_slide` - Split content layout
+- **`do_now`** - Warm-up problems with numbered questions
+  - Generates TWO slides: questions only, then questions with answers
+  - Supports LaTeX math notation
+  - Auto-numbered questions with customizable spacing
+
+- **`diagnostic_question`** - Multiple choice assessment
+  - Single question with labeled options (A, B, C, D, ...)
+  - Correct answer marked with green checkmark
+  - Supports LaTeX math in questions and answers
 
 ### Planned
-- `title_slide` - Presentation title page
-- `bullet_slide` - Bulleted lists with animations
+- `purpose_slide` - Learning objectives/goals
+- `text_slide` - Simple title and content
+- `two_column_slide` - Split content layout
 - `equation_slide` - Mathematical equations
 - `graph_slide` - Coordinate plane graphs
 - `image_slide` - Images with captions
 - `code_slide` - Code listings
-- `quiz_slide` - Multiple choice questions
 
 ## Development Roadmap
 
-### Phase 1: MVP (Current)
+### Phase 1: MVP ✅ Complete
 - [x] Define project structure
-- [ ] Create 5-slide example
-- [ ] Build basic Python generator
-- [ ] Implement 2 core templates
-- [ ] Test end-to-end workflow
+- [x] Create 5-slide example
+- [x] Build basic Python generator
+- [x] Implement 2 core templates (`do_now`, `diagnostic_question`)
+- [x] Test end-to-end workflow
+- [x] Document YAML schema
 
 ### Phase 2: Core Features
 - [ ] Add 5 more slide templates

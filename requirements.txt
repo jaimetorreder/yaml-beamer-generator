@@ -1,18 +1,7 @@
-# Core dependencies
+# Core dependencies for minimal working version
 pyyaml>=6.0
-jinja2>=3.1.0
 
-# Schema validation
-jsonschema>=4.17.0
-pydantic>=2.0.0
-
-# CLI and utilities
-click>=8.1.0
-colorama>=0.4.6
-
-# Development dependencies (install with: pip install -r requirements-dev.txt)
-# pytest>=7.4.0
-# pytest-cov>=4.1.0
-# black>=23.0.0
-# flake8>=6.0.0
-# mypy>=1.5.0
+# Future dependencies (not yet needed):
+# jinja2>=3.1.0          # For templating system
+# jsonschema>=4.17.0     # For YAML validation
+# click>=8.1.0           # For enhanced CLI
