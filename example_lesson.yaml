@@ -11,6 +11,10 @@ slides:
         answer: "$(x - 3)^2 + (y + 2)^2 = 25$"
       - question: "Solve: $\\sqrt{x + 5} = 4$"
         answer: "$x = 11$"
+      - question: "Solve: $|2x - 3| = 7$"
+        answer: "$x = 5$ or $x = -2$"
+      - question: "Evaluate $4x - 3y$ when $x = 0$ and $y = 2$."
+        answer: "$-6$"
 
   # Diagnostic Question 1
   - type: diagnostic_question
@@ -33,6 +37,7 @@ slides:
       - "8"
       - "0"
     correct: 0
+    explanation: "Substitute: $2(0) + 5(3) = 0 + 15 = 15$"
 
   # Diagnostic Question 3
   - type: diagnostic_question

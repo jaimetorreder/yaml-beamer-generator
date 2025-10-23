@@ -82,11 +82,16 @@ class BeamerGenerator:
         return latex
 
     def generate_diagnostic_question_slide(self, slide: Dict[str, Any]) -> str:
-        """Generate a diagnostic question slide with multiple choice options."""
+        """Generate a diagnostic question slide with multiple choice options.
+
+        Uses Beamer overlays to show the answer on a second slide.
+        First shows question and options, then reveals the checkmark and optional explanation.
+        """
         title = slide.get('title', 'Diagnostic Question')
         question = slide.get('question', '')
         options = slide.get('options', [])
         correct = slide.get('correct', 0)
+        explanation = slide.get('explanation', '')  # Optional explanation
 
         latex = f"% SLIDE: {title}\n"
         latex += r"\begin{frame}{" + title + "}\n"
@@ -97,8 +102,19 @@ class BeamerGenerator:
 
         for i, option in enumerate(options):
             label = labels[i] if i < len(labels) else str(i)
+            # Checkmark appears only on overlay 2+
             checkmark = r" \quad {\color{green}\checkmark}" if i == correct else ""
-            latex += f"\\textbf{{{label}.}} {option}{checkmark}\n\n"
+            if checkmark:
+                latex += f"\\textbf{{{label}.}} {option}\\onslide<2->{{{checkmark}}}\n\n"
+            else:
+                latex += f"\\textbf{{{label}.}} {option}\n\n"
+
+        # Add explanation on overlay 2+ if provided
+        if explanation:
+            latex += r"\vspace{0.5cm}" + "\n\n"
+            latex += r"\onslide<2->{" + "\n"
+            latex += r"\textbf{Explanation:} " + explanation + "\n"
+            latex += "}\n\n"
 
         latex += r"\end{frame}" + "\n\n"
 

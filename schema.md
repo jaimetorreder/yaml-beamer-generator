@@ -21,7 +21,7 @@ A slide with numbered questions for students to work on at the start of class.
 ```yaml
 - type: do_now
   title: string       # Slide title (default: "Do Now")
-  questions: array    # Array of question objects
+  questions: array    # Array of question objects (typically 4 questions)
 ```
 
 **Question Object:**
@@ -33,24 +33,28 @@ A slide with numbered questions for students to work on at the start of class.
 **Behavior:**
 - Generates TWO slides: one with questions only, one with questions and answers
 - Questions are automatically numbered
+- Recommended: 4 questions per Do Now
 - LaTeX math must be wrapped in `$...$` for inline or `$$...$$` for display
 
 ### 2. Diagnostic Question Slide (`diagnostic_question`)
 
-A multiple-choice question slide for formative assessment.
+A multiple-choice question slide for formative assessment with animated answer reveal.
 
 ```yaml
 - type: diagnostic_question
-  title: string       # Slide title
-  question: string    # The question text (supports LaTeX math)
-  options: array      # Array of answer options
-  correct: integer    # Index of correct answer (0-based)
+  title: string          # Slide title
+  question: string       # The question text (supports LaTeX math)
+  options: array         # Array of answer options
+  correct: integer       # Index of correct answer (0-based)
+  explanation: string    # Optional explanation (appears with answer)
 ```
 
-**Options:**
+**Features:**
 - Array of strings representing answer choices
 - Automatically labeled A, B, C, D, etc.
-- The correct answer is marked with a green checkmark
+- **Animation**: First overlay shows question and options only
+- **Animation**: Second overlay reveals the correct answer with green checkmark
+- Optional explanation appears on second overlay (supports LaTeX math)
 
 ## Complete Example
 
@@ -66,6 +70,10 @@ slides:
         answer: "$x = 4$"
       - question: "What is the slope of $y = 3x - 2$?"
         answer: "$m = 3$"
+      - question: "Find the y-intercept of $y = 2x - 7$"
+        answer: "$b = -7$"
+      - question: "Evaluate $3x + 2$ when $x = 5$"
+        answer: "$17$"
 
   - type: diagnostic_question
     title: "Diagnostic: Slope"
@@ -76,6 +84,7 @@ slides:
       - "Undefined"
       - "Negative"
     correct: 0
+    explanation: "Horizontal lines have no vertical change, so slope $m = 0$."
 ```
 
 ## Notes
