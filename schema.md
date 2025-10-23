@@ -36,7 +36,33 @@ A slide with numbered questions for students to work on at the start of class.
 - Recommended: 4 questions per Do Now
 - LaTeX math must be wrapped in `$...$` for inline or `$$...$$` for display
 
-### 2. Diagnostic Question Slide (`diagnostic_question`)
+### 2. Learning Goals Slide (`learning_goals`)
+
+A simple slide displaying the lesson's learning objectives.
+
+```yaml
+- type: learning_goals
+  title: string       # Slide title (default: "Learning Goals")
+  goals: array        # Array of learning goal strings (1-3 recommended)
+```
+
+**Features:**
+- Large font for readability
+- Bulleted list format
+- Typically 1-3 learning objectives
+- Supports LaTeX math notation in goal text
+
+**Example:**
+```yaml
+- type: learning_goals
+  title: "Today's Focus"
+  goals:
+    - "Find x- and y-intercepts algebraically and graph lines"
+    - "Calculate slope from graphs, equations, or two points"
+    - "Write equations of lines using point-slope and slope-intercept forms"
+```
+
+### 3. Diagnostic Question Slide (`diagnostic_question`)
 
 A multiple-choice question slide for formative assessment with animated answer reveal.
 
@@ -74,6 +100,13 @@ slides:
         answer: "$b = -7$"
       - question: "Evaluate $3x + 2$ when $x = 5$"
         answer: "$17$"
+
+  - type: learning_goals
+    title: "Today's Focus"
+    goals:
+      - "Find x- and y-intercepts algebraically and graph lines"
+      - "Calculate slope from graphs, equations, or two points"
+      - "Write equations of lines using point-slope and slope-intercept forms"
 
   - type: diagnostic_question
     title: "Diagnostic: Slope"

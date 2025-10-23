@@ -16,6 +16,14 @@ slides:
       - question: "Evaluate $4x - 3y$ when $x = 0$ and $y = 2$."
         answer: "$-6$"
 
+  # Learning Goals
+  - type: learning_goals
+    title: "Today's Focus"
+    goals:
+      - "Find x- and y-intercepts algebraically and graph lines"
+      - "Calculate slope from graphs, equations, or two points"
+      - "Write equations of lines using point-slope and slope-intercept forms"
+
   # Diagnostic Question 1
   - type: diagnostic_question
     title: "Diagnostic: Substitution"

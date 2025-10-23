@@ -8,16 +8,16 @@ This project automates the creation of educational slide presentations by separa
 
 ## Project Status
 
-✅ **Minimal Working Example Complete** - 5 slides, 2 template types
+✅ **Minimal Working Example Complete** - 6 slides, 3 template types
 
 ## Features
 
 - ✅ Define lesson content in simple YAML format
 - ✅ YAML schema documentation
 - ✅ Python generator script
-- ✅ Two slide templates: `do_now` and `diagnostic_question`
+- ✅ Three slide templates: `do_now`, `learning_goals`, and `diagnostic_question`
 - ✅ LaTeX math notation support
-- ✅ Working example with 5 slides
+- ✅ Working example with 6 slides
 - 🚧 Schema validation for YAML structure
 - 📋 Additional slide templates (text, two-column, graphs, etc.)
 - 📋 Animation support for step-by-step reveals
@@ -108,14 +108,20 @@ slides:
   - Generates TWO slides: questions only, then questions with answers
   - Supports LaTeX math notation
   - Auto-numbered questions with customizable spacing
+  - Answers displayed in green
+
+- **`learning_goals`** - Learning objectives display
+  - Large font bulleted list
+  - Typically 1-3 learning goals
+  - Simple, clear formatting
 
 - **`diagnostic_question`** - Multiple choice assessment
   - Single question with labeled options (A, B, C, D, ...)
-  - Correct answer marked with green checkmark
+  - Correct answer marked with green checkmark (animated reveal)
+  - Optional explanation in green
   - Supports LaTeX math in questions and answers
 
 ### Planned
-- `purpose_slide` - Learning objectives/goals
 - `text_slide` - Simple title and content
 - `two_column_slide` - Split content layout
 - `equation_slide` - Mathematical equations
@@ -127,9 +133,10 @@ slides:
 
 ### Phase 1: MVP ✅ Complete
 - [x] Define project structure
-- [x] Create 5-slide example
+- [x] Create 6-slide example
 - [x] Build basic Python generator
-- [x] Implement 2 core templates (`do_now`, `diagnostic_question`)
+- [x] Implement 3 core templates (`do_now`, `learning_goals`, `diagnostic_question`)
+- [x] Add animations (diagnostic question reveal)
 - [x] Test end-to-end workflow
 - [x] Document YAML schema
 

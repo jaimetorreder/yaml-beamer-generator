@@ -120,12 +120,35 @@ class BeamerGenerator:
 
         return latex
 
+    def generate_learning_goals_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate a Learning Goals slide with a bulleted list.
+
+        Displays 1-3 learning objectives in a large font with bullet points.
+        """
+        title = slide.get('title', 'Learning Goals')
+        goals = slide.get('goals', [])
+
+        latex = f"% SLIDE: {title}\n"
+        latex += r"\begin{frame}{" + title + "}\n"
+        latex += r"\Large" + "\n"
+        latex += r"\begin{itemize}" + "\n"
+
+        for goal in goals:
+            latex += f"\\item {goal}\n"
+
+        latex += r"\end{itemize}" + "\n"
+        latex += r"\end{frame}" + "\n\n"
+
+        return latex
+
     def generate_slide(self, slide: Dict[str, Any]) -> str:
         """Generate LaTeX for a single slide based on its type."""
         slide_type = slide.get('type', '')
 
         if slide_type == 'do_now':
             return self.generate_do_now_slide(slide)
+        elif slide_type == 'learning_goals':
+            return self.generate_learning_goals_slide(slide)
         elif slide_type == 'diagnostic_question':
             return self.generate_diagnostic_question_slide(slide)
         else:
