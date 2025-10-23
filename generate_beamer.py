@@ -74,7 +74,7 @@ class BeamerGenerator:
             answer_text = q.get('answer', '')
 
             latex += f"\\textbf{{{i}.}} {question_text}\n\n"
-            latex += f"\\quad \\textbf{{Answer:}} {answer_text}\n\n"
+            latex += f"\\quad \\textbf{{Answer:}} {{\\color{{green}}{answer_text}}}\n\n"
             latex += r"\vspace{0.3cm}" + "\n\n"
 
         latex += r"\end{frame}" + "\n\n"
@@ -113,7 +113,7 @@ class BeamerGenerator:
         if explanation:
             latex += r"\vspace{0.5cm}" + "\n\n"
             latex += r"\onslide<2->{" + "\n"
-            latex += r"\textbf{Explanation:} " + explanation + "\n"
+            latex += r"\textbf{Explanation:} {\color{green}" + explanation + "}\n"
             latex += "}\n\n"
 
         latex += r"\end{frame}" + "\n\n"
