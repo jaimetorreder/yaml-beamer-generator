@@ -1,0 +1,757 @@
+\documentclass[12pt]{beamer}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Solving Other Equations}
+\subtitle{Absolute Value and Rational Equations}
+\date{}
+
+\begin{document}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+\frame{\titlepage}
+
+% ==================== DO NOW ====================
+\begin{frame}{Do Now}
+\textbf{Solve the following problems:}
+
+\vspace{0.5cm}
+
+\textbf{1.} Solve: $x^2 = 49$
+
+\vspace{0.5cm}
+
+\textbf{2.} Solve: $(x-3)^2 = 16$
+
+\vspace{0.5cm}
+
+\textbf{3.} Solve: $x^2 + 4x - 5 = 0$
+
+\vspace{0.5cm}
+
+\textbf{4.} A ball is dropped from a height of 64 feet. When does it hit the ground?
+$$h(t) = -16t^2 + v_0t + h_0$$
+\end{frame}
+
+\begin{frame}{Do Now - Answers}
+\textbf{1.} $x^2 = 49$ \quad $\Rightarrow$ \quad $x = 7$ or $x = -7$
+
+\vspace{0.5cm}
+
+\textbf{2.} $(x-3)^2 = 16$ \quad $\Rightarrow$ \quad $x = 7$ or $x = -1$
+
+\vspace{0.5cm}
+
+\textbf{3.} $x^2 + 4x - 5 = 0$ \quad $\Rightarrow$ \quad $x = 1$ or $x = -5$
+
+\vspace{0.5cm}
+
+\textbf{4.} $h(t) = -16t^2 + 0 \cdot t + 64 = 0$
+
+$-16t^2 + 64 = 0 \quad \Rightarrow \quad t^2 = 4 \quad \Rightarrow \quad t = 2$ seconds
+\end{frame}
+
+% ==================== PURPOSE ====================
+\begin{frame}{Today's Goal}
+\Large
+\textbf{By the end of today, you will be able to:}
+
+\vspace{0.5cm}
+
+\normalsize
+\begin{itemize}
+\item Solve absolute value equations
+\item Solve rational equations
+\end{itemize}
+
+\vspace{0.5cm}
+
+\textbf{Why?} These techniques build on linear equation solving and prepare you for more complex algebraic problem-solving.
+\end{frame}
+
+% ==================== DIAGNOSTICS - LINEAR EQUATIONS ====================
+\begin{frame}{Diagnostic: Linear Equations}
+\textbf{Solve:} $3(2x - 5) = 4x + 7$
+
+\vspace{1cm}
+
+\textbf{A.} $x = 11$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} $x = -4$
+
+\textbf{C.} $x = \displaystyle\frac{22}{2}$
+
+\textbf{D.} No solution
+\end{frame}
+
+\begin{frame}{Diagnostic: Linear Equations (Follow-up)}
+\textbf{Solve:} $2(3x + 4) = 5x - 1$
+
+\vspace{1cm}
+
+\textbf{A.} $x = -9$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} $x = 7$
+
+\textbf{C.} $x = \displaystyle\frac{-9}{1}$
+
+\textbf{D.} No solution
+\end{frame}
+
+\begin{frame}{Diagnostic: Linear Equations}
+\textbf{Solve:} $4(x + 2) = 4x - 5$
+
+\vspace{1cm}
+
+\textbf{A.} $x = 0$
+
+\textbf{B.} $x = -13$
+
+\textbf{C.} $x = \displaystyle\frac{-13}{0}$
+
+\textbf{D.} No solution \hfill \uncover<2->{{\color{green}\checkmark}}
+\end{frame}
+
+\begin{frame}{Diagnostic: Linear Equations (Follow-up)}
+\textbf{Solve:} $5(x - 3) = 5x + 7$
+
+\vspace{1cm}
+
+\textbf{A.} $x = 0$
+
+\textbf{B.} $x = 22$
+
+\textbf{C.} $x = \displaystyle\frac{22}{0}$
+
+\textbf{D.} No solution \hfill \uncover<2->{{\color{green}\checkmark}}
+\end{frame}
+
+% ==================== SKILL 1: ABSOLUTE VALUE - CYCLE 1 ====================
+\begin{frame}{Skill 1: Absolute Value Equations}
+\Large
+\textbf{Cycle 1: Isolate and Solve}
+\end{frame}
+
+\begin{frame}{Atom 1 Diagnostic: Isolating}
+\textbf{If} $|x + 5| - 3 = 7$, \textbf{what does} $|x + 5|$ \textbf{equal?}
+
+\vspace{1cm}
+
+\textbf{A.} 4
+
+\textbf{B.} 7
+
+\textbf{C.} 10 \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{D.} $-3$
+\end{frame}
+
+\begin{frame}{Atom 1 Teaching: Isolating the Absolute Value}
+$|x + 2| - 3 = 6$ \pause $\rightarrow$ $|x + 2| = 9$
+
+\pause
+\vspace{0.5cm}
+
+$|x + 2| + 5 = 12$ \pause $\rightarrow$ $|x + 2| = 7$
+
+\pause
+\vspace{0.5cm}
+
+$3|x + 2| = 6$ \pause $\rightarrow$ $|x + 2| = 2$
+
+\pause
+\vspace{0.5cm}
+
+$\displaystyle\frac{|x + 2|}{4} = 3$ \pause $\rightarrow$ $|x + 2| = 12$
+\end{frame}
+
+\begin{frame}{Atom 2 Teaching: Absolute Value Property}
+$|x| = 5$ \pause $\rightarrow$ $x = 5$ or $x = -5$
+
+\pause
+\vspace{0.5cm}
+
+$|x - 1| = 8$ \pause $\rightarrow$ $x - 1 = 8$ or $x - 1 = -8$
+
+\pause
+\vspace{0.5cm}
+
+$|x + 2| = 7$ \pause $\rightarrow$ $x + 2 = 7$ or $x + 2 = -7$
+\end{frame}
+
+\begin{frame}{Atom 2 Test 1}
+\textbf{If} $|y| = 9$, \textbf{what are the valid solutions?}
+
+\vspace{1cm}
+
+\textbf{A.} $y = 9$ only
+
+\textbf{B.} $y = 9$ or $y = -9$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{C.} $y = 9$ and $y = 9$
+
+\textbf{D.} $y - 9 = 0$ or $y + 9 = 0$
+\end{frame}
+
+\begin{frame}{Atom 2 Test 2}
+\textbf{If} $|x - 3| = 6$, \textbf{which equations should we solve?}
+
+\vspace{1cm}
+
+\textbf{A.} $x = 6$ or $x = -6$
+
+\textbf{B.} $x - 3 = 6$ only
+
+\textbf{C.} $x - 3 = 6$ or $x - 3 = -6$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{D.} $x = 3$ or $x = -3$
+\end{frame}
+
+\begin{frame}{I Do: Absolute Value}
+\textbf{Solve:} $|2x - 5| + 3 = 10$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 1: Isolate} $\Rightarrow$ $|2x - 5| = 7$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 2: Two cases} $\Rightarrow$ $2x - 5 = 7$ or $2x - 5 = -7$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 3: Solve each case}
+
+\pause
+Case 1: $2x - 5 = 7 \Rightarrow 2x = 12 \Rightarrow x = 6$
+
+\pause
+Case 2: $2x - 5 = -7 \Rightarrow 2x = -2 \Rightarrow x = -1$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 4: Check both solutions}
+
+\pause
+Check $x = 6$: $|2(6) - 5| + 3 = |7| + 3 = 10$ \checkmark
+
+\pause
+Check $x = -1$: $|2(-1) - 5| + 3 = |-7| + 3 = 10$ \checkmark
+
+\pause
+\vspace{0.3cm}
+
+\Large \textbf{Answer:} $x = 6$ or $x = -1$
+\end{frame}
+
+\begin{frame}{We Do: Absolute Value}
+\textbf{Solve:} $|3x + 1| - 2 = 5$
+
+\vspace{2cm}
+
+\textit{Work through this problem step by step.}
+\end{frame}
+
+\begin{frame}{We Do: Absolute Value - Solution}
+\textbf{Solve:} $|3x + 1| - 2 = 5$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 1:} Isolate \pause $\Rightarrow$ $|3x + 1| = 7$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 2:} Two cases \pause $\Rightarrow$ $3x + 1 = 7$ or $3x + 1 = -7$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 3:} Solve:
+
+\pause
+\begin{itemize}
+\item Case 1: $3x = 6 \Rightarrow x = 2$ \pause
+\item Case 2: $3x = -8 \Rightarrow x = -\displaystyle\frac{8}{3}$
+\end{itemize}
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 4:} Check both (both work!) \checkmark
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Answer:} $x = 2$ or $x = -\displaystyle\frac{8}{3}$
+\end{frame}
+
+\begin{frame}{Practice: Absolute Value}
+\textbf{Solve the following:}
+
+\vspace{0.5cm}
+
+\textbf{1.} $|x - 4| + 6 = 11$ \uncover<2->{\hfill $x = 9$ or $x = -1$}
+
+\vspace{0.5cm}
+
+\textbf{2.} $|2x + 3| - 1 = 8$ \uncover<3->{\hfill $x = 3$ or $x = -6$}
+
+\vspace{0.5cm}
+
+\textbf{3.} $|5x - 2| + 4 = 12$ \uncover<4->{\hfill $x = 2$ or $x = -\displaystyle\frac{6}{5}$}
+\end{frame}
+
+% ==================== SKILL 1: ABSOLUTE VALUE - CYCLE 2 ====================
+\begin{frame}{Skill 1: Absolute Value Equations}
+\Large
+\textbf{Cycle 2: No-Solution Case}
+\end{frame}
+
+\begin{frame}{Atom 4 Teaching: Absolute Value is Always Non-Negative}
+$|x| = -5$ \pause \quad {\color{red}NO}
+
+\pause
+\vspace{0.5cm}
+
+$|x| = 3$ \pause \quad {\color{green}YES}
+
+\pause
+\vspace{0.5cm}
+
+$|x| = 0$ \pause \quad {\color{green}YES}
+
+\pause
+\vspace{0.5cm}
+
+$|x + 2| = 8$ \pause \quad {\color{green}YES}
+
+\pause
+\vspace{0.5cm}
+
+$|3x - 1| = -2$ \pause \quad {\color{red}NO}
+\end{frame}
+
+\begin{frame}{Atom 4 Test 1}
+\textbf{Does} $|x - 5| = 7$ \textbf{have solutions?}
+
+\vspace{1cm}
+
+\textbf{A.} Yes \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} No
+\end{frame}
+
+\begin{frame}{Atom 4 Test 2}
+\textbf{Does} $|2x + 3| = -4$ \textbf{have solutions?}
+
+\vspace{1cm}
+
+\textbf{A.} Yes
+
+\textbf{B.} No \hfill \uncover<2->{{\color{green}\checkmark}}
+\end{frame}
+
+\begin{frame}{Atom 4 Test 3}
+\textbf{Does} $|x| = 0$ \textbf{have solutions?}
+
+\vspace{1cm}
+
+\textbf{A.} Yes \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} No
+\end{frame}
+
+\begin{frame}{I Do: No-Solution Case}
+\textbf{Solve:} $|3x + 1| + 7 = 4$
+
+\pause
+\vspace{0.5cm}
+
+\textbf{Step 1: Isolate} $\Rightarrow$ $|3x + 1| = -3$
+
+\pause
+\vspace{0.5cm}
+
+\textbf{Step 2: Recognize the problem}
+
+Absolute value cannot equal a negative number!
+
+\pause
+\vspace{0.5cm}
+
+\Large
+\textbf{Answer: No solution}
+\end{frame}
+
+\begin{frame}{We Do: No-Solution Case}
+\textbf{Solve:} $|2x - 5| + 9 = 6$
+
+\vspace{2cm}
+
+\textit{Work through this problem.}
+\end{frame}
+
+\begin{frame}{We Do: No-Solution Case - Solution}
+\textbf{Solve:} $|2x - 5| + 9 = 6$
+
+\pause
+\vspace{0.5cm}
+
+\textbf{Step 1:} Isolate \pause $\Rightarrow$ $|2x - 5| = -3$
+
+\pause
+\vspace{0.5cm}
+
+\textbf{Step 2:} Absolute value cannot be negative!
+
+\pause
+\vspace{0.5cm}
+
+\Large
+\textbf{Answer: No solution}
+\end{frame}
+
+% ==================== SKILL 2: RATIONAL EQUATIONS ====================
+\begin{frame}{Skill 2: Rational Equations}
+\Large
+\textbf{Solving with the LCD Method}
+\end{frame}
+
+\begin{frame}{Atom 1 Diagnostic: Finding LCD}
+\textbf{What is the LCD of} $\displaystyle\frac{1}{4}$, $\displaystyle\frac{1}{6}$, \textbf{and} $\displaystyle\frac{1}{8}$?
+
+\vspace{1cm}
+
+\textbf{A.} 12
+
+\textbf{B.} 24 \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{C.} 48
+
+\textbf{D.} 192
+\end{frame}
+
+\begin{frame}{Atom 1 Diagnostic Follow-up}
+\textbf{What is the LCD of} $\displaystyle\frac{1}{3}$, $\displaystyle\frac{1}{5}$, \textbf{and} $\displaystyle\frac{1}{15}$?
+
+\vspace{1cm}
+
+\textbf{A.} 15 \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} 45
+
+\textbf{C.} 75
+
+\textbf{D.} 225
+\end{frame}
+
+\begin{frame}{Atom 2 Diagnostic: LCD with Variables}
+\textbf{What is the LCD of} $\displaystyle\frac{1}{2x}$, $\displaystyle\frac{1}{3x}$, \textbf{and} $\displaystyle\frac{1}{6}$?
+
+\vspace{1cm}
+
+\textbf{A.} $6x$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} $6x^2$
+
+\textbf{C.} $36x$
+
+\textbf{D.} $2x$
+\end{frame}
+
+\begin{frame}{Atom 2 Diagnostic Follow-up}
+\textbf{What is the LCD of} $\displaystyle\frac{1}{4x}$, $\displaystyle\frac{1}{5x}$, \textbf{and} $\displaystyle\frac{1}{10}$?
+
+\vspace{1cm}
+
+\textbf{A.} $20x$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} $10x$
+
+\textbf{C.} $20x^2$
+
+\textbf{D.} $40x$
+\end{frame}
+
+\begin{frame}{Atom 3 Diagnostic: Multiply by LCD}
+\textbf{If we multiply both sides of} $\displaystyle\frac{1}{3} + \frac{1}{x} = \frac{1}{2}$ \textbf{by} $6x$, \textbf{what is the simplified equation?}
+
+\vspace{0.5cm}
+
+\textbf{A.} $2x + 6 = 3x$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} $2 + 6x = 3$
+
+\textbf{C.} $\displaystyle\frac{6x}{3} + \frac{6x}{x} = \frac{6x}{2}$
+
+\textbf{D.} $3x + 2 = 6x$
+\end{frame}
+
+\begin{frame}{Atom 3 Diagnostic Follow-up}
+\textbf{If we multiply both sides of} $\displaystyle\frac{1}{4} - \frac{1}{x} = \frac{1}{3}$ \textbf{by} $12x$, \textbf{what is the simplified equation?}
+
+\vspace{0.5cm}
+
+\textbf{A.} $3x - 12 = 4x$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{B.} $3 - 12x = 4$
+
+\textbf{C.} $12 - 3x = 4x$
+
+\textbf{D.} $\displaystyle\frac{12x}{4} - \frac{12x}{x} = \frac{12x}{3}$
+\end{frame}
+
+\begin{frame}{Atom 6 Test 1: Domain Restrictions}
+\textbf{For the equation} $\displaystyle\frac{1}{x-2} + \frac{1}{x+5} = 3$, \textbf{which values of} $x$ \textbf{are NOT allowed?}
+
+\vspace{0.5cm}
+
+\textbf{A.} $x = 2$ only
+
+\textbf{B.} $x = -5$ only
+
+\textbf{C.} $x = 2$ or $x = -5$ \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{D.} $x = 0$
+\end{frame}
+
+\begin{frame}{Atom 6 Test 2: Checking Solutions}
+\textbf{You solved a rational equation and got} $x = 3$. \textbf{The original equation was} $\displaystyle\frac{2}{x-3} + \frac{1}{x} = 5$. \textbf{Is} $x = 3$ \textbf{a valid solution?}
+
+\vspace{0.5cm}
+
+\textbf{A.} Yes
+
+\textbf{B.} No, because it makes a denominator zero \hfill \uncover<2->{{\color{green}\checkmark}}
+
+\textbf{C.} Yes, because $3 \neq 0$
+
+\textbf{D.} Cannot determine
+\end{frame}
+
+\begin{frame}{I Do 1: Rational Equations}
+\textbf{Solve:} $\displaystyle\frac{1}{2} + \frac{1}{3} = \frac{1}{x}$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 1:} LCD = $6x$ \quad \pause \textbf{Step 2:} Multiply by LCD
+
+\pause
+$6x \cdot \displaystyle\frac{1}{2} + 6x \cdot \frac{1}{3} = 6x \cdot \frac{1}{x}$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 3:} Simplify $\Rightarrow$ $3x + 2x = 6$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 4:} Solve $\Rightarrow$ $5x = 6$ \pause $\Rightarrow$ $x = \displaystyle\frac{6}{5}$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 5:} Check: $\displaystyle\frac{1}{2} + \frac{1}{3} = \frac{3}{6} + \frac{2}{6} = \frac{5}{6}$ and $\frac{1}{6/5} = \frac{5}{6}$ \checkmark
+
+\pause
+\vspace{0.3cm}
+
+\Large \textbf{Answer:} $x = \displaystyle\frac{6}{5}$
+\end{frame}
+
+\begin{frame}{I Do 2: Rational Equations}
+\textbf{Solve:} $\displaystyle\frac{x}{x-1} - \frac{6}{x+3} = \frac{x^2}{x^2+2x-3}$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 1:} Factor right side $\Rightarrow$ $x^2 + 2x - 3 = (x-1)(x+3)$
+
+\pause
+$$\frac{x}{x-1} - \frac{6}{x+3} = \frac{x^2}{(x-1)(x+3)}$$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 2:} LCD = $(x-1)(x+3)$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 3:} Multiply by LCD and simplify $\Rightarrow$ $x(x+3) - 6(x-1) = x^2$
+\end{frame}
+
+\begin{frame}{I Do 2: Rational Equations (continued)}
+$$x(x+3) - 6(x-1) = x^2$$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 4:} Expand $\Rightarrow$ $x^2 + 3x - 6x + 6 = x^2$
+
+\pause
+$\Rightarrow$ $x^2 - 3x + 6 = x^2$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 5:} Simplify (notice $x^2$ cancels!) $\Rightarrow$ $-3x + 6 = 0$
+
+\pause
+$\Rightarrow$ $-3x = -6$ \pause $\Rightarrow$ $x = 2$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 6:} Check: $\displaystyle\frac{2}{1} - \frac{6}{5} = \frac{10}{5} - \frac{6}{5} = \frac{4}{5}$ and $\frac{4}{5} = \frac{4}{5}$ \checkmark
+
+\pause
+\vspace{0.3cm}
+
+\Large \textbf{Answer:} $x = 2$
+\end{frame}
+
+\begin{frame}{We Do: Rational Equations (Extraneous Solution)}
+\textbf{Solve:} $\displaystyle\frac{3}{x} - \frac{2}{x-3} = \frac{-12}{x^2-9}$
+
+\vspace{2cm}
+
+\textit{Work through this problem step by step. Be careful - one solution might be extraneous!}
+\end{frame}
+
+\begin{frame}{We Do: Solution}
+$\displaystyle\frac{3}{x} - \frac{2}{x-3} = \frac{-12}{x^2-9}$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 1:} Factor $\Rightarrow$ $x^2 - 9 = (x-3)(x+3)$ \quad LCD = $x(x-3)(x+3)$
+
+\pause
+$$\frac{3}{x} - \frac{2}{x-3} = \frac{-12}{(x-3)(x+3)}$$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 2:} Multiply by LCD, simplify $\Rightarrow$ $3(x-3)(x+3) - 2x(x+3) = -12x$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 3:} Expand $\Rightarrow$ $3x^2 - 27 - 2x^2 - 6x = -12x$
+
+\pause
+$\Rightarrow$ $x^2 + 6x - 27 = 0$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 4:} Factor $\Rightarrow$ $(x + 9)(x - 3) = 0$ \pause $\Rightarrow$ $x = -9$ or $x = 3$
+\end{frame}
+
+\begin{frame}{We Do: Solution (continued)}
+$x = -9$ or $x = 3$
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Step 5: Check BOTH solutions}
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Check} $x = 3$: $\displaystyle\frac{3}{3} - \frac{2}{3-3} = \frac{-12}{9-9}$ \pause $\Rightarrow$ $\frac{3}{3} - \frac{2}{0} = \frac{-12}{0}$
+
+\pause
+\textbf{Division by zero!} This solution is {\color{red}EXTRANEOUS}.
+
+\pause
+\vspace{0.3cm}
+
+\textbf{Check} $x = -9$: $\displaystyle\frac{3}{-9} - \frac{2}{-12} = -\frac{1}{3} + \frac{1}{6}$
+
+\pause
+$= -\displaystyle\frac{2}{6} + \frac{1}{6} = -\frac{1}{6}$
+
+\pause
+And $\displaystyle\frac{-12}{72} = -\frac{1}{6}$ \checkmark
+
+\pause
+\vspace{0.3cm}
+
+\Large \textbf{Answer:} $x = -9$ only
+\end{frame}
+
+% ==================== CONSOLIDATION ====================
+\begin{frame}{Consolidation: Practice Problems}
+\textbf{Solve the following rational equations:}
+
+\vspace{0.5cm}
+
+\textbf{1.} $\displaystyle\frac{2}{x} + \frac{3}{x+1} = 5$
+
+\vspace{0.5cm}
+
+\textbf{2.} $\displaystyle\frac{x}{x+2} - \frac{4}{x-2} = \frac{16}{x^2-4}$
+
+\vspace{0.5cm}
+
+\textbf{3.} $\displaystyle\frac{5}{x} - \frac{3}{x-2} = \frac{-10}{x^2-2x}$
+\end{frame}
+
+\begin{frame}{Consolidation: Answers}
+\textbf{1.} $\displaystyle\frac{2}{x} + \frac{3}{x+1} = 5$
+
+\quad $\Rightarrow$ \quad $x = 1$ or $x = -\displaystyle\frac{1}{5}$
+
+\vspace{0.5cm}
+
+\textbf{2.} $\displaystyle\frac{x}{x+2} - \frac{4}{x-2} = \frac{16}{x^2-4}$
+
+\quad $\Rightarrow$ \quad $x = 4$
+
+\vspace{0.5cm}
+
+\textbf{3.} $\displaystyle\frac{5}{x} - \frac{3}{x-2} = \frac{-10}{x^2-2x}$
+
+\quad $\Rightarrow$ \quad $x = 5$ (Note: $x = 0$ is extraneous)
+\end{frame}
+
+% ==================== CLOSURE ====================
+\begin{frame}{Closure}
+\Large
+\textbf{What We Learned Today:}
+
+\vspace{0.5cm}
+
+\normalsize
+\textbf{Absolute Value Equations:}
+\begin{itemize}
+\item Isolate the absolute value first
+\item Set up two cases: $|A| = b \Rightarrow A = b$ or $A = -b$
+\item If absolute value = negative, no solution
+\end{itemize}
+
+\vspace{0.5cm}
+
+\textbf{Rational Equations:}
+\begin{itemize}
+\item Find the LCD of all denominators
+\item Multiply both sides by LCD
+\item Solve the resulting equation
+\item Always check solutions in the original equation!
+\end{itemize}
+\end{frame}
+
+\end{document}
