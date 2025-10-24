@@ -1,6 +1,5 @@
 title: "Solving Absolute Value Equations"
-author: "Math Teacher"
-date: "2025-10-24"
+author: "Professor Torre"
 
 slides:
   # ==================== DO NOW ====================
@@ -25,7 +24,7 @@ slides:
 
   # ==================== DIAGNOSTIC (Seen Atom) ====================
   - type: diagnostic_question
-    title: "Diagnostic: Linear Equations"
+    topic: "Linear Equations"
     question: "Solve: $3(2x - 5) = 4x + 7$"
     options:
       - "$x = 11$"
@@ -36,7 +35,7 @@ slides:
 
   # ==================== NEW ATOM: TRANSFORMATION ====================
   - type: new_atom_transformation
-    title: "Atom 1: Isolating the Absolute Value"
+    topic: "Isolating the Absolute Value"
     transformations:
       - from: "$|x + 2| - 3 = 6$"
         to: "$|x + 2| = 9$"
@@ -49,7 +48,7 @@ slides:
 
   # ==================== NEW ATOM: FACT ====================
   - type: new_atom_fact
-    title: "Atom 2: Absolute Value Property"
+    topic: "Absolute Value Property"
     examples:
       - statement: "$|x| = 5$"
         result: "{\\color{green}YES}"
@@ -62,7 +61,7 @@ slides:
 
   # ==================== NEW ATOM: CATEGORY ====================
   - type: new_atom_category
-    title: "Types of Absolute Value Equations"
+    topic: "Types of Absolute Value Equations"
     categories:
       - name: "Standard Form"
         description: "Absolute value already isolated"

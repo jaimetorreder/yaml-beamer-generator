@@ -16,8 +16,8 @@ class BeamerGenerator:
     def __init__(self, yaml_data: Dict[str, Any]):
         self.data = yaml_data
         self.title = yaml_data.get('title', 'Untitled Presentation')
-        self.author = yaml_data.get('author', '')
-        self.date = yaml_data.get('date', r'\today')
+        self.author = yaml_data.get('author', 'Professor Torre')
+        self.date = yaml_data.get('date', '')
         self.slides = yaml_data.get('slides', [])
 
     def generate_preamble(self) -> str:
@@ -34,9 +34,14 @@ class BeamerGenerator:
         preamble += f"\\title{{{self.title}}}\n"
         if self.author:
             preamble += f"\\author{{{self.author}}}\n"
-        preamble += f"\\date{{{self.date}}}\n"
+        if self.date:
+            preamble += f"\\date{{{self.date}}}\n"
+        else:
+            preamble += "\\date{}\n"
+
         preamble += r"""
 \begin{document}
+\setbeamertemplate{navigation symbols}{}
 
 \frame{\titlepage}
 
@@ -87,7 +92,9 @@ class BeamerGenerator:
         Uses Beamer overlays to show the answer on a second slide.
         First shows question and options, then reveals the checkmark and optional explanation.
         """
-        title = slide.get('title', 'Diagnostic Question')
+        # Support both 'topic' (new format) and 'title' (legacy)
+        topic = slide.get('topic', '')
+        title = f"Review atom: {topic}" if topic else slide.get('title', 'Diagnostic Question')
         question = slide.get('question', '')
         options = slide.get('options', [])
         correct = slide.get('correct', 0)
@@ -146,7 +153,9 @@ class BeamerGenerator:
 
         Shows a fact or property with multiple examples demonstrating it.
         """
-        title = slide.get('title', 'New Atom: Fact')
+        # Support both 'topic' (new format) and 'title' (legacy)
+        topic = slide.get('topic', '')
+        title = f"New atom: {topic} (F)" if topic else slide.get('title', 'New Atom: Fact')
         examples = slide.get('examples', [])
 
         latex = f"% SLIDE: {title}\n"
@@ -169,7 +178,9 @@ class BeamerGenerator:
 
         Shows categorization or classification of concepts.
         """
-        title = slide.get('title', 'New Atom: Category')
+        # Support both 'topic' (new format) and 'title' (legacy)
+        topic = slide.get('topic', '')
+        title = f"New atom: {topic} (C)" if topic else slide.get('title', 'New Atom: Category')
         categories = slide.get('categories', [])
 
         latex = f"% SLIDE: {title}\n"
@@ -200,7 +211,9 @@ class BeamerGenerator:
 
         Shows step-by-step transformations from one form to another.
         """
-        title = slide.get('title', 'New Atom: Transformation')
+        # Support both 'topic' (new format) and 'title' (legacy)
+        topic = slide.get('topic', '')
+        title = f"New atom: {topic} (T)" if topic else slide.get('title', 'New Atom: Transformation')
         transformations = slide.get('transformations', [])
 
         latex = f"% SLIDE: {title}\n"

@@ -1,6 +1,5 @@
 title: "Linear Functions Review"
-author: "Math Teacher"
-date: "2025-10-22"
+author: "Professor Torre"
 
 slides:
   # Do Now - generates 2 slides (questions + answers)
@@ -26,7 +25,7 @@ slides:
 
   # Diagnostic Question 1
   - type: diagnostic_question
-    title: "Diagnostic: Substitution"
+    topic: "Substitution"
     question: "Evaluate the expression $3x - 4y$ when $x = 2$ and $y = 0$."
     options:
       - "-8"
@@ -37,7 +36,7 @@ slides:
 
   # Diagnostic Question 2
   - type: diagnostic_question
-    title: "Diagnostic: Substitution"
+    topic: "Substitution"
     question: "Evaluate the expression $2a + 5b$ when $a = 0$ and $b = 3$."
     options:
       - "15"
@@ -49,7 +48,7 @@ slides:
 
   # Diagnostic Question 3
   - type: diagnostic_question
-    title: "Diagnostic: Solving Equations"
+    topic: "Solving Equations"
     question: "Solve for $x$: $3x = 12$"
     options:
       - "$x = 9$"
