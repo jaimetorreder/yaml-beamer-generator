@@ -8,19 +8,19 @@ This project automates the creation of educational slide presentations by separa
 
 ## Project Status
 
-✅ **Minimal Working Example Complete** - 6 slides, 3 template types
+✅ **Full Template System Complete** - 10 slide template types
 
 ## Features
 
 - ✅ Define lesson content in simple YAML format
 - ✅ YAML schema documentation
 - ✅ Python generator script
-- ✅ Three slide templates: `do_now`, `learning_goals`, and `diagnostic_question`
+- ✅ **10 slide templates** covering full lesson workflow
 - ✅ LaTeX math notation support
-- ✅ Working example with 6 slides
+- ✅ Beamer animation support (overlays, progressive reveals)
+- ✅ Working examples (simple and comprehensive)
 - 🚧 Schema validation for YAML structure
-- 📋 Additional slide templates (text, two-column, graphs, etc.)
-- 📋 Animation support for step-by-step reveals
+- 📋 Additional slide templates (graphs, images, etc.)
 
 ## Quick Start
 
@@ -103,57 +103,91 @@ slides:
 
 ## Available Slide Templates
 
-### Current (v0.1)
-- **`do_now`** - Warm-up problems with numbered questions
-  - Generates TWO slides: questions only, then questions with answers
-  - Supports LaTeX math notation
-  - Auto-numbered questions with customizable spacing
-  - Answers displayed in green
+### Current (v1.0) - Complete Lesson Workflow
 
-- **`learning_goals`** - Learning objectives display
-  - Large font bulleted list
-  - Typically 1-3 learning goals
-  - Simple, clear formatting
+#### 1. **`do_now`** - Warm-up Problems
+- Generates TWO slides: questions only, then questions with answers
+- Auto-numbered questions (typically 4)
+- Answers displayed in green
 
-- **`diagnostic_question`** - Multiple choice assessment
-  - Single question with labeled options (A, B, C, D, ...)
-  - Correct answer marked with green checkmark (animated reveal)
-  - Optional explanation in green
-  - Supports LaTeX math in questions and answers
+#### 2. **`learning_goals`** - Learning Objectives
+- Large font bulleted list
+- Typically 1-3 learning goals
+
+#### 3. **`diagnostic_question`** - Formative Assessment (Seen Atom)
+- Multiple choice with A, B, C, D options
+- Animated reveal of green checkmark
+- Optional explanation in green
+
+#### 4. **`new_atom_fact`** - Introduce Facts/Properties
+- Shows fact with multiple examples
+- Progressive reveal with pause
+- Side-by-side statement and result
+
+#### 5. **`new_atom_category`** - Teach Classifications
+- Shows categories with descriptions
+- Examples as bulleted lists
+- Progressive reveal
+
+#### 6. **`new_atom_transformation`** - Show Transformations
+- Step-by-step transformations (from → to)
+- Progressive reveal between steps
+- Great for algebraic manipulations
+
+#### 7. **`i_do`** - Teacher Demonstration
+- Worked example with labeled steps
+- Progressive reveal of each step
+- Final answer in large font
+
+#### 8. **`we_do`** - Guided Practice
+- Similar to I Do but for collaboration
+- Currently identical to `i_do` template
+
+#### 9. **`practice`** - Independent Practice
+- Multiple problems with answers
+- Progressive answer reveal (overlay animations)
+- All questions visible from start
+
+#### 10. **`closure`** - Lesson Summary
+- "What We Learned Today" heading
+- Multiple topics with bullet points
+- Perfect for wrapping up
 
 ### Planned
-- `text_slide` - Simple title and content
-- `two_column_slide` - Split content layout
-- `equation_slide` - Mathematical equations
-- `graph_slide` - Coordinate plane graphs
+- `graph_slide` - Coordinate plane graphs with TikZ
 - `image_slide` - Images with captions
-- `code_slide` - Code listings
+- `two_column_slide` - Split content layout
 
 ## Development Roadmap
 
 ### Phase 1: MVP ✅ Complete
 - [x] Define project structure
-- [x] Create 6-slide example
+- [x] Create initial examples
 - [x] Build basic Python generator
-- [x] Implement 3 core templates (`do_now`, `learning_goals`, `diagnostic_question`)
-- [x] Add animations (diagnostic question reveal)
+- [x] Implement core templates
 - [x] Test end-to-end workflow
-- [x] Document YAML schema
 
-### Phase 2: Core Features
-- [ ] Add 5 more slide templates
-- [ ] Implement YAML schema validation
-- [ ] Add animation support
-- [ ] Create comprehensive documentation
+### Phase 2: Full Template System ✅ Complete
+- [x] Implement 10 slide templates covering full lesson workflow
+- [x] Add Beamer animation support (`\pause`, `\uncover`)
+- [x] New Atom templates (Fact, Category, Transformation)
+- [x] Teaching workflow templates (I Do, We Do, Practice, Closure)
+- [x] Comprehensive example with all templates
+- [x] Complete schema documentation
+
+### Phase 3: Enhancements (Current)
+- [ ] Add YAML schema validation
 - [ ] Build test suite
+- [ ] CLI improvements (error messages, validation)
 
-### Phase 3: Math Support
-- [ ] TikZ graph generation templates
-- [ ] Equation formatting templates
-- [ ] Step-by-step problem solving layouts
-- [ ] Interactive overlays
+### Phase 4: Advanced Features
+- [ ] TikZ graph slide template
+- [ ] Image slide template
+- [ ] Two-column slide template
+- [ ] Advanced math formatting options
+- [ ] Step-by-step problem solving layouts with custom animations
 
-### Phase 4: Polish
+### Phase 5: Polish
 - [ ] CLI with options and flags
 - [ ] Error handling and validation
 - [ ] Template customization system

@@ -1,0 +1,136 @@
+title: "Solving Absolute Value Equations"
+author: "Math Teacher"
+date: "2025-10-24"
+
+slides:
+  # ==================== DO NOW ====================
+  - type: do_now
+    title: "Do Now"
+    questions:
+      - question: "Solve: $x^2 = 49$"
+        answer: "$x = 7$ or $x = -7$"
+      - question: "Solve: $(x-3)^2 = 16$"
+        answer: "$x = 7$ or $x = -1$"
+      - question: "Solve: $x^2 + 4x - 5 = 0$"
+        answer: "$x = 1$ or $x = -5$"
+      - question: "Simplify: $|-7|$"
+        answer: "$7$"
+
+  # ==================== LEARNING GOALS ====================
+  - type: learning_goals
+    title: "Today's Goal"
+    goals:
+      - "Solve absolute value equations"
+      - "Identify when absolute value equations have no solution"
+
+  # ==================== DIAGNOSTIC (Seen Atom) ====================
+  - type: diagnostic_question
+    title: "Diagnostic: Linear Equations"
+    question: "Solve: $3(2x - 5) = 4x + 7$"
+    options:
+      - "$x = 11$"
+      - "$x = -4$"
+      - "$x = \\displaystyle\\frac{22}{2}$"
+      - "No solution"
+    correct: 0
+
+  # ==================== NEW ATOM: TRANSFORMATION ====================
+  - type: new_atom_transformation
+    title: "Atom 1: Isolating the Absolute Value"
+    transformations:
+      - from: "$|x + 2| - 3 = 6$"
+        to: "$|x + 2| = 9$"
+      - from: "$|x + 2| + 5 = 12$"
+        to: "$|x + 2| = 7$"
+      - from: "$3|x + 2| = 6$"
+        to: "$|x + 2| = 2$"
+      - from: "$\\displaystyle\\frac{|x + 2|}{4} = 3$"
+        to: "$|x + 2| = 12$"
+
+  # ==================== NEW ATOM: FACT ====================
+  - type: new_atom_fact
+    title: "Atom 2: Absolute Value Property"
+    examples:
+      - statement: "$|x| = 5$"
+        result: "{\\color{green}YES}"
+      - statement: "$|x| = 0$"
+        result: "{\\color{green}YES}"
+      - statement: "$|x + 2| = 8$"
+        result: "{\\color{green}YES}"
+      - statement: "$|3x - 1| = -2$"
+        result: "{\\color{red}NO}"
+
+  # ==================== NEW ATOM: CATEGORY ====================
+  - type: new_atom_category
+    title: "Types of Absolute Value Equations"
+    categories:
+      - name: "Standard Form"
+        description: "Absolute value already isolated"
+        examples:
+          - "$|x| = 5$"
+          - "$|x - 3| = 7$"
+      - name: "Needs Isolation"
+        description: "Must isolate absolute value first"
+        examples:
+          - "$|x| + 3 = 8$"
+          - "$2|x - 1| = 10$"
+      - name: "No Solution"
+        description: "Absolute value equals negative"
+        examples:
+          - "$|x| = -5$"
+          - "$|x + 2| = -1$"
+
+  # ==================== I DO ====================
+  - type: i_do
+    title: "I Do: Absolute Value"
+    problem: "$|2x - 5| + 3 = 10$"
+    steps:
+      - label: "Step 1: Isolate"
+        content: "$\\Rightarrow$ $|2x - 5| = 7$"
+      - label: "Step 2: Two cases"
+        content: "$\\Rightarrow$ $2x - 5 = 7$ or $2x - 5 = -7$"
+      - label: "Step 3: Solve each case"
+        content: "Case 1: $2x - 5 = 7 \\Rightarrow 2x = 12 \\Rightarrow x = 6$ \\\\\\ Case 2: $2x - 5 = -7 \\Rightarrow 2x = -2 \\Rightarrow x = -1$"
+      - label: "Step 4: Check both solutions"
+        content: "Check $x = 6$: $|2(6) - 5| + 3 = |7| + 3 = 10$ \\checkmark \\\\\\ Check $x = -1$: $|2(-1) - 5| + 3 = |-7| + 3 = 10$ \\checkmark"
+    answer: "$x = 6$ or $x = -1$"
+
+  # ==================== WE DO ====================
+  - type: we_do
+    title: "We Do: Absolute Value"
+    problem: "$|3x + 1| - 2 = 5$"
+    steps:
+      - label: "Step 1"
+        content: "Isolate $\\Rightarrow$ $|3x + 1| = 7$"
+      - label: "Step 2"
+        content: "Two cases $\\Rightarrow$ $3x + 1 = 7$ or $3x + 1 = -7$"
+      - label: "Step 3"
+        content: "Solve: Case 1: $3x = 6 \\Rightarrow x = 2$ \\\\\\ Case 2: $3x = -8 \\Rightarrow x = -\\displaystyle\\frac{8}{3}$"
+      - label: "Step 4"
+        content: "Check both (both work!) \\checkmark"
+    answer: "$x = 2$ or $x = -\\displaystyle\\frac{8}{3}$"
+
+  # ==================== PRACTICE ====================
+  - type: practice
+    title: "Practice: Absolute Value"
+    problems:
+      - question: "$|x - 4| + 6 = 11$"
+        answer: "$x = 9$ or $x = -1$"
+      - question: "$|2x + 3| - 1 = 8$"
+        answer: "$x = 3$ or $x = -6$"
+      - question: "$|5x - 2| + 4 = 12$"
+        answer: "$x = 2$ or $x = -\\displaystyle\\frac{6}{5}$"
+
+  # ==================== CLOSURE ====================
+  - type: closure
+    title: "Closure"
+    topics:
+      - title: "Absolute Value Equations"
+        points:
+          - "Isolate the absolute value first"
+          - "Set up two cases: $|A| = b \\Rightarrow A = b$ or $A = -b$"
+          - "If absolute value = negative, no solution"
+      - title: "Key Steps"
+        points:
+          - "Always check your solutions"
+          - "Remember: absolute values are never negative"

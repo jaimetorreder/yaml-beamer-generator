@@ -120,9 +120,154 @@ slides:
     explanation: "Horizontal lines have no vertical change, so slope $m = 0$."
 ```
 
+### 4. New Atom: Fact Slide (`new_atom_fact`)
+
+Introduces a new fact or property with multiple examples demonstrating it.
+
+```yaml
+- type: new_atom_fact
+  title: string        # Slide title
+  examples: array      # Array of example objects
+```
+
+**Example Object:**
+```yaml
+- statement: string   # The statement or expression
+  result: string      # The result or evaluation
+```
+
+**Features:**
+- Progressive reveal with `\pause` between examples
+- Great for showing property evaluations or yes/no determinations
+- Examples shown side-by-side with results
+
+### 5. New Atom: Category Slide (`new_atom_category`)
+
+Shows categorization or classification of concepts.
+
+```yaml
+- type: new_atom_category
+  title: string        # Slide title
+  categories: array    # Array of category objects
+```
+
+**Category Object:**
+```yaml
+- name: string         # Category name
+  description: string  # Brief description
+  examples: array      # Array of example strings (optional)
+```
+
+**Features:**
+- Progressive reveal of each category
+- Examples shown as bulleted lists
+- Good for teaching types or classifications
+
+### 6. New Atom: Transformation Slide (`new_atom_transformation`)
+
+Shows step-by-step transformations from one form to another.
+
+```yaml
+- type: new_atom_transformation
+  title: string             # Slide title
+  transformations: array    # Array of transformation objects
+```
+
+**Transformation Object:**
+```yaml
+- from: string   # Starting expression
+  to: string     # Resulting expression
+```
+
+**Features:**
+- Shows transformation with arrow: `from → to`
+- Progressive reveal with pause between each
+- Ideal for showing algebraic manipulations or simplifications
+
+### 7. I Do Slide (`i_do`)
+
+Teacher-led worked example with detailed step-by-step solution.
+
+```yaml
+- type: i_do
+  title: string     # Slide title (default: "I Do")
+  problem: string   # The problem statement
+  steps: array      # Array of step objects
+  answer: string    # Final answer (optional)
+```
+
+**Step Object:**
+```yaml
+- label: string    # Step label (e.g., "Step 1: Isolate")
+  content: string  # Step content/work
+```
+
+**Features:**
+- Progressive reveal of each step
+- Final answer displayed in large font
+- Use `\\\\` for line breaks within step content
+
+### 8. We Do Slide (`we_do`)
+
+Guided practice problem for student participation.
+
+```yaml
+- type: we_do
+  title: string     # Slide title (default: "We Do")
+  problem: string   # The problem statement
+  steps: array      # Array of step objects
+  answer: string    # Final answer (optional)
+```
+
+**Note:** Currently implemented identically to `i_do` template. Future versions may differentiate for collaborative work.
+
+### 9. Practice Slide (`practice`)
+
+Multiple practice problems with progressive answer reveal.
+
+```yaml
+- type: practice
+  title: string      # Slide title (default: "Practice")
+  problems: array    # Array of problem objects
+```
+
+**Problem Object:**
+```yaml
+- question: string  # The problem/question
+  answer: string    # The answer
+```
+
+**Features:**
+- All problems shown initially
+- Answers revealed progressively (overlay 2, 3, 4, ...)
+- Good for independent practice with quick answer checking
+
+### 10. Closure Slide (`closure`)
+
+Summarizes what was learned in the lesson.
+
+```yaml
+- type: closure
+  title: string    # Slide title (default: "Closure")
+  topics: array    # Array of topic objects
+```
+
+**Topic Object:**
+```yaml
+- title: string   # Topic title
+  points: array   # Array of bullet point strings
+```
+
+**Features:**
+- Large "What We Learned Today" heading
+- Multiple topics with bulleted key points
+- Perfect for lesson wrap-up and review
+
 ## Notes
 
 - All text fields support LaTeX math notation
 - Use `$...$` for inline math: `$x^2 + y^2 = r^2$`
 - Use `$$...$$` for display math (will be converted appropriately)
 - Special characters should be LaTeX-escaped where necessary
+- Use `\\\\` for line breaks within text content
+- Beamer `\pause` and `\uncover` commands are used for animations

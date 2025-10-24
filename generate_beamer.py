@@ -141,6 +141,180 @@ class BeamerGenerator:
 
         return latex
 
+    def generate_new_atom_fact_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate a New Atom: Fact slide.
+
+        Shows a fact or property with multiple examples demonstrating it.
+        """
+        title = slide.get('title', 'New Atom: Fact')
+        examples = slide.get('examples', [])
+
+        latex = f"% SLIDE: {title}\n"
+        latex += r"\begin{frame}{" + title + "}\n"
+
+        for example in examples:
+            statement = example.get('statement', '')
+            result = example.get('result', '')
+
+            latex += f"{statement} \\pause \\quad {result}\n\n"
+            latex += r"\pause" + "\n"
+            latex += r"\vspace{0.5cm}" + "\n\n"
+
+        latex += r"\end{frame}" + "\n\n"
+
+        return latex
+
+    def generate_new_atom_category_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate a New Atom: Category slide.
+
+        Shows categorization or classification of concepts.
+        """
+        title = slide.get('title', 'New Atom: Category')
+        categories = slide.get('categories', [])
+
+        latex = f"% SLIDE: {title}\n"
+        latex += r"\begin{frame}{" + title + "}\n"
+
+        for category in categories:
+            name = category.get('name', '')
+            description = category.get('description', '')
+            examples = category.get('examples', [])
+
+            latex += f"\\textbf{{{name}:}} {description}\n\n"
+            latex += r"\pause" + "\n"
+
+            if examples:
+                latex += r"\begin{itemize}" + "\n"
+                for ex in examples:
+                    latex += f"\\item {ex} \\pause\n"
+                latex += r"\end{itemize}" + "\n\n"
+
+            latex += r"\vspace{0.5cm}" + "\n\n"
+
+        latex += r"\end{frame}" + "\n\n"
+
+        return latex
+
+    def generate_new_atom_transformation_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate a New Atom: Transformation slide.
+
+        Shows step-by-step transformations from one form to another.
+        """
+        title = slide.get('title', 'New Atom: Transformation')
+        transformations = slide.get('transformations', [])
+
+        latex = f"% SLIDE: {title}\n"
+        latex += r"\begin{frame}{" + title + "}\n"
+
+        for transform in transformations:
+            from_expr = transform.get('from', '')
+            to_expr = transform.get('to', '')
+
+            latex += f"{from_expr} \\pause $\\rightarrow$ {to_expr}\n\n"
+            latex += r"\pause" + "\n"
+            latex += r"\vspace{0.5cm}" + "\n\n"
+
+        latex += r"\end{frame}" + "\n\n"
+
+        return latex
+
+    def generate_i_do_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate an I Do slide.
+
+        Teacher-led worked example with detailed steps.
+        """
+        title = slide.get('title', 'I Do')
+        problem = slide.get('problem', '')
+        steps = slide.get('steps', [])
+        answer = slide.get('answer', '')
+
+        latex = f"% SLIDE: {title}\n"
+        latex += r"\begin{frame}{" + title + "}\n"
+        latex += f"\\textbf{{Solve:}} {problem}\n\n"
+        latex += r"\pause" + "\n"
+        latex += r"\vspace{0.3cm}" + "\n\n"
+
+        for i, step in enumerate(steps, 1):
+            step_label = step.get('label', f'Step {i}')
+            step_content = step.get('content', '')
+
+            latex += f"\\textbf{{{step_label}:}} {step_content}\n\n"
+            latex += r"\pause" + "\n"
+            latex += r"\vspace{0.3cm}" + "\n\n"
+
+        if answer:
+            latex += r"\Large \textbf{Answer:} " + answer + "\n"
+
+        latex += r"\end{frame}" + "\n\n"
+
+        return latex
+
+    def generate_we_do_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate a We Do slide.
+
+        Guided practice problem (similar to I Do but for student participation).
+        For now, implemented identically to I Do.
+        """
+        # Reuse I Do template
+        return self.generate_i_do_slide(slide)
+
+    def generate_practice_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate a Practice slide.
+
+        Multiple practice problems with answers revealed progressively.
+        """
+        title = slide.get('title', 'Practice')
+        problems = slide.get('problems', [])
+
+        latex = f"% SLIDE: {title}\n"
+        latex += r"\begin{frame}{" + title + "}\n"
+        latex += r"\textbf{Solve the following:}" + "\n\n"
+        latex += r"\vspace{0.5cm}" + "\n\n"
+
+        for i, problem in enumerate(problems, 1):
+            question = problem.get('question', '')
+            answer = problem.get('answer', '')
+
+            latex += f"\\textbf{{{i}.}} {question} "
+            latex += f"\\uncover<{i+1}->{{\\hfill {answer}}}\n\n"
+            latex += r"\vspace{0.5cm}" + "\n\n"
+
+        latex += r"\end{frame}" + "\n\n"
+
+        return latex
+
+    def generate_closure_slide(self, slide: Dict[str, Any]) -> str:
+        """Generate a Closure slide.
+
+        Summarizes what was learned in the lesson.
+        """
+        title = slide.get('title', 'Closure')
+        topics = slide.get('topics', [])
+
+        latex = f"% SLIDE: {title}\n"
+        latex += r"\begin{frame}{" + title + "}\n"
+        latex += r"\Large" + "\n"
+        latex += r"\textbf{What We Learned Today:}" + "\n\n"
+        latex += r"\vspace{0.5cm}" + "\n\n"
+        latex += r"\normalsize" + "\n"
+
+        for topic in topics:
+            topic_title = topic.get('title', '')
+            points = topic.get('points', [])
+
+            latex += f"\\textbf{{{topic_title}:}}\n"
+            latex += r"\begin{itemize}" + "\n"
+
+            for point in points:
+                latex += f"\\item {point}\n"
+
+            latex += r"\end{itemize}" + "\n\n"
+            latex += r"\vspace{0.5cm}" + "\n\n"
+
+        latex += r"\end{frame}" + "\n\n"
+
+        return latex
+
     def generate_slide(self, slide: Dict[str, Any]) -> str:
         """Generate LaTeX for a single slide based on its type."""
         slide_type = slide.get('type', '')
@@ -151,6 +325,20 @@ class BeamerGenerator:
             return self.generate_learning_goals_slide(slide)
         elif slide_type == 'diagnostic_question':
             return self.generate_diagnostic_question_slide(slide)
+        elif slide_type == 'new_atom_fact':
+            return self.generate_new_atom_fact_slide(slide)
+        elif slide_type == 'new_atom_category':
+            return self.generate_new_atom_category_slide(slide)
+        elif slide_type == 'new_atom_transformation':
+            return self.generate_new_atom_transformation_slide(slide)
+        elif slide_type == 'i_do':
+            return self.generate_i_do_slide(slide)
+        elif slide_type == 'we_do':
+            return self.generate_we_do_slide(slide)
+        elif slide_type == 'practice':
+            return self.generate_practice_slide(slide)
+        elif slide_type == 'closure':
+            return self.generate_closure_slide(slide)
         else:
             print(f"Warning: Unknown slide type '{slide_type}'", file=sys.stderr)
             return ""
